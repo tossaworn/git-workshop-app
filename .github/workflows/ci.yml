@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COMPANY_NAME: 'NTPLC'
+    environment: development
     steps:
       - run: echo "Hello ${{ github.actor }} Repo ${{ env.REPO_NAME }}"
       - run: echo ${{ env.SERVER_IP }}
