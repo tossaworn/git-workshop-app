@@ -29,6 +29,7 @@ jobs:
 
   job-2:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Build Production
-        run: echo "Server IP -> ${{ env.SERVER_IP }}"
+      - run: echo "Server IP -> ${{ env.SERVER_IP }}"
+      - run: echo ${{ vars.APP_NAME }}
