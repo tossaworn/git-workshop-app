@@ -7,15 +7,25 @@ on:
       - 'bugfix/**'
       - 'chore/**'
       - main
-  
+
+env:
+  SERVER_IP: '127.0.0.1'
+  SERVER_PORT: 80
+  REPO_NAME: ${{ github.repository }}
+
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    env:
+      COMPANY_NAME: 'NTPLC'
     steps:
-      - run: echo "Hello GitHub Actions"
+      - run: echo "Hello ${{ github.actor }} Repo ${{ env.REPO_NAME }}"
+      - run: echo ${{ env.SERVER_IP }}
+      - run: echo ${{ env.SERVER_PORT }}
+      - run: echo ${{ env.COMPANY_NAME }}
 
   job-2:
     runs-on: ubuntu-latest
     steps:
-      - name: build Production
-        run: echo "build job2"
+      - name: Build Production
+        run: echo "Server IP -> ${{ env.SERVER_IP }}"
