@@ -23,6 +23,8 @@ jobs:
       - run: echo ${{ env.SERVER_IP }}
       - run: echo ${{ env.SERVER_PORT }}
       - run: echo ${{ env.COMPANY_NAME }}
+      - run: echo ${{ vars.APP_NAME }}
+      - run: echo ${{ secrets.API_KEY }}
 
   job-2:
     runs-on: ubuntu-latest
